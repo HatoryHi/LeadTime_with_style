@@ -22,6 +22,9 @@ $time = microtime(true) - $start_time;
 echo 'Время выполнения запроса: ' . round(microtime(true) - $start_time, 4) . ' сек,' . ' ' . 'для таблицы - ' . $table;
 
 ?>
+<div class="field">
+    <button name="write" class="btn btn-primary" onclick="window.location.href='search_double.php'">Проверить</button>
+</div>
 <!DOCTYPE>
 <html lang="">
 <head>

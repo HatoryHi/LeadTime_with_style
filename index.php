@@ -13,13 +13,16 @@ $options = array(
 $pdo = new PDO($dsn, $user, $pass, $options);
 
 
-$table = 'departs'; // указываешь таблицу
+$table = 'littles'; // указываешь таблицу
 $start_time = microtime(true);
 $all_data = $pdo->query("SELECT * FROM $table");
 $res_mas = $all_data->fetchAll();//возвращаем данные в виде массива
 $time = microtime(true) - $start_time;
 
-echo 'Время выполнения запроса: ' . round(microtime(true) - $start_time, 4) . ' сек,' . ' ' . 'для таблицы - ' . $table;
+echo 'Время выполнения запроса: ' . round(microtime(true) - $start_time, 4) . ' сек,' . ' ' . 'для таблицы - ' . $table.'</br>';
+$count_data = $pdo->query("SELECT count(*) FROM $table");
+$res_count = $count_data->fetchAll();
+var_dump($res_count);
 
 ?>
 <div class="field">
